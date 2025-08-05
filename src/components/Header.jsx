@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import user from "../assets/user.png";
 import { FiSearch } from "react-icons/fi";
@@ -13,10 +13,12 @@ import { navigation } from "../constants/navigation";
 
 
 const Header = () => {
- 
-  const [searchInput, setSearchInput] = useState('');
+  const location = useLocation()
+  const removeSpace = location?.search?.slice(3).split("%20").join(" ");
+  const [searchInput, setSearchInput] = useState(removeSpace);
   const navigate = useNavigate();
 
+  console.log("location", location?.search?.slice(3));
   useEffect(()=>{
      if(searchInput){
       navigate(`/search?q=${searchInput}`)

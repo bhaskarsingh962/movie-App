@@ -6,7 +6,7 @@ const initialState = {
 }
 
 export const MovieHubSlice = createSlice({
-    name: 'MovieHub',
+    name: 'movieHub',
     initialState,
     reducers: {
         setBannerData: (state, action) => {
