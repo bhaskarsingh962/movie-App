@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
-import logo from "../assets/logo.png";
+import movieLogo from "../assets/movieLogo.png"
 import user from "../assets/user.png";
 import { FiSearch } from "react-icons/fi";
 import { IoMdHome } from "react-icons/io";
@@ -33,7 +33,7 @@ const Header = () => {
     <div className=" fixed top-0 w-full h-16 bg-neutral-600/75 z-40">
       <div className=" container mx-auto px-2 flex items-center h-full">
         <Link to="/">
-          <img src={logo} alt="logo" width={120} />
+          <img src={movieLogo} alt="logo" width={120} />
         </Link>
         <nav className="hidden lg:flex items-center gap-1 ml-5">
           {navigation.map((nav, index) => {
